@@ -8,6 +8,7 @@ import {
 } from "firebase/firestore";
 import { Input } from "./ui/input";
 import { useEffect, useState } from "react";
+import { ICar } from "@/types";
 
 interface FilterProps {
   db: Firestore;
@@ -48,9 +49,9 @@ export function Filters({ db, collectionCar }: FilterProps) {
 
       <h2>Resultados:</h2>
       <ul>
-        {results.map((car, index) => (
+        {results.map((car: ICar, index) => (
           <li key={index}>
-            {car.brand} - {car.model} ({car.year})
+            {car.brandCar} - {car.modelCar} ({car.yearFabrication})
           </li>
         ))}
       </ul>
