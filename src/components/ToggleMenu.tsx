@@ -27,13 +27,12 @@ export function ToggleMenu({ className }: ToggleMenuProps) {
           </DropdownMenuItem>
         ))}
 
-        <DropdownMenuSeparator>
-          <DropdownMenuItem>
-            <Button className="w-full" asChild>
-              <Link to="/anunciar">Anunciar</Link>
-            </Button>
-          </DropdownMenuItem>
-        </DropdownMenuSeparator>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <Button className="w-full" asChild>
+            <Link to="/anunciar">Anunciar</Link>
+          </Button>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

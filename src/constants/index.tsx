@@ -24,7 +24,7 @@ export const LinksDashboard = [
   },
   {
     title: "Criar Carro",
-    href: "/dashboard/cirar-carro",
+    href: "/dashboard/criar-carro",
   },
   {
     title: "Criar Moto",

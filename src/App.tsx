@@ -11,6 +11,8 @@ import { Forms } from "./pages/Forms";
 import { Motorbikes } from "./pages/Motorbikes";
 import { Dashboard } from "./admin/pages/Dashboard";
 import PrivateRoute from "./routes/PrivateRoute";
+import { Emails } from "./admin/pages/Emails";
+import { CreateCar } from "./admin/pages/CreateCar";
 
 function App() {
   return (
@@ -94,6 +96,24 @@ function App() {
           element={
             <PrivateRoute>
               <Dashboard />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/dashboard/emails"
+          element={
+            <PrivateRoute>
+              <Emails />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/dashboard/criar-carro"
+          element={
+            <PrivateRoute>
+              <CreateCar />
             </PrivateRoute>
           }
         />

@@ -39,6 +39,7 @@ export const carSchema = z.object({
   modelCar: z.string().min(1, { message: "Model is required" }),
   bodyType: z.string().min(1, { message: "Body Type is required" }),
   mechanic: z.string().min(1, { message: "Mechanic is required" }),
+  condition: z.string().min(1, { message: "Condition is required" }),
   plate: z.string().min(1, { message: "Plate is required" }),
   auction: z.string().min(1, { message: "Auction is required" }),
   yearFabrication: z
@@ -54,6 +55,7 @@ export const carSchema = z.object({
   accessories: z.string().min(1, { message: "Accessories is required" }),
 
   price: z.string().min(1, { message: "Price is required" }),
+  exchange: z.string().min(1, { message: "Exchange is required" }),
 
   description: z.string().min(1, { message: "Description is required" }),
   images: z
@@ -94,6 +96,35 @@ export const motorbikeSchema = z.object({
   km: z.string().min(1, { message: "Km is required" }),
   price: z.string().min(1, { message: "Price is required" }),
 
+  description: z.string().min(1, { message: "Description is required" }),
+  images: z
+    .any()
+    .refine((files) => {
+      return files?.[0]?.size <= MAX_FILE_SIZE;
+    }, `Max image size is 5MB.`)
+    .refine(
+      (files) => ACCEPTED_IMAGE_MIME_TYPES.includes(files?.[0]?.type),
+      "Only .jpg, .jpeg, .png and .webp formats are supported."
+    ),
+});
+
+export const carShowSchema = z.object({
+  price: z.string().min(1, { message: "Price is required" }),
+  location: z.string().min(1, { message: "Location is required" }),
+  bodyType: z.string().min(1, { message: "Body Type is required" }),
+  brandCar: z.string().min(1, { message: "Brand is required" }),
+  plate: z.string().min(1, { message: "Plate is required" }),
+  modelCar: z.string().min(1, { message: "Model is required" }),
+  fuel: z.string().min(1, { message: "Fuel is required" }),
+  km: z.string().min(1, { message: "Km is required" }),
+  condition: z.string().min(1, { message: "Condition is required" }),
+  yearFabrication: z
+    .string()
+    .min(1, { message: "Year Fabrication is required" }),
+  exchange: z.string().min(1, { message: "Exchange is required" }),
+  color: z.string().min(1, { message: "Color is required" }),
+  accessories: z.string().min(1, { message: "Accessories is required" }),
+  doors: z.string().min(1, { message: "Doors is required" }),
   description: z.string().min(1, { message: "Description is required" }),
   images: z
     .any()

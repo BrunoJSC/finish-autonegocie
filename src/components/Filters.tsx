@@ -43,14 +43,14 @@ export function Filters({ db, collectionCar }: FilterProps) {
     fetchData();
   }, [db, collectionCar, filters]);
   return (
-    <div>
+    <div className="flex flex-col space-y-4">
       <Input name="city" onChange={handleChange} />
       <Input name="category" onChange={handleChange} />
 
       <h2>Resultados:</h2>
       <ul>
         {results.map((car: ICar, index) => (
-          <li key={index}>
+          <li key={car.id}>
             {car.brandCar} - {car.modelCar} ({car.yearFabrication})
           </li>
         ))}
