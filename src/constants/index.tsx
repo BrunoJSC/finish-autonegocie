@@ -17,6 +17,11 @@ export const NAV_LINK = [
   { label: "Contato", href: "/contato" },
 ];
 
+export const ADMIN_LINK: { label: string; href: string }[] = [
+  { label: "Carros", href: "/dashboard/carros" },
+  { label: "Motos", href: "/dashboard/motos" },
+];
+
 export const LinksDashboard = [
   {
     title: "Inicio",
@@ -44,28 +49,28 @@ export const FEATURES = [
   {
     title: "Avaliação",
     description:
-      "Avalie seu veículo de forma rápida e segura com a garantia de uma empresa com mais de 20 anos de experiência no mercado.",
+      "Avalie seu veículo de forma rápida e segura em nossa plataforma. É importante garantir que esteja bem conservado para analisarmos da melhor forma e chegarmos a um preço justo.",
     icon: <MessageCircle color="#fff" />,
   },
 
   {
     title: "Negociação",
     description:
-      "Negocie seu veículo com segurança e rapidez, com a garantia de uma empresa com mais de 20 anos de experiência no mercado.",
+      "Em nossa plataforma você terá uma negociação de alta qualidade, te conectamos com o comprador que procura exatamente o que o seu veículo oferece para facilitar todo o processo.",
     icon: <HeartHandshake color="#fff" />,
   },
 
   {
     title: "Venda",
     description:
-      "Venda seu veículo com segurança e rapidez, com a garantia de uma empresa com mais de 20 anos de experiência no mercado.",
+      "Nossa equipe te acompanha e cuida de todos os passos para uma venda simplificada e segura. Tenha a disposição um atendimento qualificado para tirar todas as suas dúvidas das etapas de venda.",
     icon: <BadgePercent color="#fff" />,
   },
 
   {
     title: "Compra",
     description:
-      "Compre seu veículo com segurança e rapidez, com a garantia de uma empresa com mais de 20 anos de experiência no mercado.",
+      "Tenha acesso a um catálogo de carros selecionados por nossa equipe com o objetivo de manter a qualidade em tudo que oferecemos a você. Temos preços abaixo do mercado e facilitamos a sua compra através de troca e financiamento. ",
     icon: <Plus color="#fff" />,
   },
 ];

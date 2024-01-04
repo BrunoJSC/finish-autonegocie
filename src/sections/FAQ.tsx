@@ -14,28 +14,23 @@ export function FAQ() {
         />
 
         <Summary
-          title="2. Como posso entrar em contato em caso de emergências fora do horário comercial?"
-          text="AutoNegocie é uma plataforma de negociação de veículos."
+          title="2. Como funciona a venda do veículo pela Autonegocie ?"
+          text="Realizamos uma avaliação do cadastro do seu veículo, definimos um preço com base em tudo o que seu carro oferece no momento, e damos início ao processo de anúncio na plataforma utilizando as principais ferramentas de marketing digital. A Autonegocie possui uma equipe altamente qualificada para o atendimento de todos os leads, direcionando as melhores ofertas de compra, e cuidando de toda a venda."
         />
 
         <Summary
-          title="3. Posso agendar um test drive?"
-          text="AutoNegocie é uma plataforma de negociação de veículos."
+          title="3. É seguro anunciar meu veículo com a Autonegocie?"
+          text="Além da nossa equipe que possui grande experiência no ramo de veículos, utilizamos uma tecnologia que analisa e elimina qualquer tipo de fraude, evitando golpes no processo de negociação."
         />
 
         <Summary
-          title="4. Quais são as opções de financiamento disponíveis?"
-          text="AutoNegocie é uma plataforma de negociação de veículos."
+          title="4. Qual o prazo médio para vender um veículo com a Autonegocie?"
+          text="Veículos de bom comércio são vendidos em um prazo médio de 10 a 15 dias."
         />
 
         <Summary
-          title="5. Vocês aceitam trocas?"
-          text="AutoNegocie é uma plataforma de negociação de veículos."
-        />
-
-        <Summary
-          title="6. Quais serviços de pós-venda vocês oferecem?"
-          text="AutoNegocie é uma plataforma de negociação de veículos."
+          title="5. Preciso pagar algum valor para a plataforma ?"
+          text="Sim, temos um valor de comissão que nos ajuda a manter toda a qualidade no processo de compra e venda conosco, isso será combinado durante a negociação e pago apenas após a venda do seu veículo."
         />
       </div>
     </section>

@@ -3,12 +3,12 @@ import { onSnapshot, collection } from "firebase/firestore";
 import { db } from "../firebase";
 import { Header } from "../components/Header";
 import { Footer } from "@/sections/Footer";
-import { ICar } from "@/types";
+import { IMotorbike } from "@/types";
 import { Card } from "@/components/ui/card";
 import { Filters } from "@/components/Filters";
 
 export function Motorbikes() {
-  const [data, setData] = useState<ICar[]>([]);
+  const [data, setData] = useState<IMotorbike[]>([]);
   const [filters, setFilters] = useState({
     brand: "",
     model: "",
@@ -26,11 +26,11 @@ export function Motorbikes() {
   });
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, "cars"), (snapshot) => {
+    const unsubscribe = onSnapshot(collection(db, "motorbikes"), (snapshot) => {
       const data = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
-      })) as ICar[];
+      })) as IMotorbike[];
       setData(data);
     });
 
@@ -44,9 +44,17 @@ export function Motorbikes() {
         <div className="flex flex-col md:flex-row gap-4">
           <Card className="w-full md:w-[300px] bg-primary rounded-md p-4 mb-4 md:mb-0">
             <h1 className="text-3xl font-bold text-white mb-4">Filtros</h1>
-            <Filters db={db} collectionCar="cars" />
+            <Filters db={db} collectionCar="motorbikes" />
           </Card>
-          <div className="w-full p-4 flex-1 bg-red-500"></div>
+          <div className="w-full p-4 flex-1 bg-red-500">
+            {data.map((data) => (
+              <div key={data.id}>
+                <h1>
+                  {data.motorbikeBrand} {data.motorbikeModel}
+                </h1>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
       <Footer />

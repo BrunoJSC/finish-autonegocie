@@ -4,11 +4,12 @@ import { db } from "../firebase";
 import { Header } from "../components/Header";
 import { Footer } from "@/sections/Footer";
 import { ICar } from "@/types";
-import { Card } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Filters } from "@/components/Filters";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function Cars() {
+  const navigate = useNavigate();
   const [data, setData] = useState<ICar[]>([]);
   const [filters, setFilters] = useState({
     brand: "",
@@ -47,9 +48,15 @@ export function Cars() {
             <h1 className="text-3xl font-bold text-white mb-4">Filtros</h1>
             <Filters db={db} collectionCar="cars" />
           </Card>
-          <div className="w-full p-4 flex-1">
+          <div className="w-full p-4 flex-1 flex flex-col space-y-7">
             {data.map((car) => (
-              <Link to={`/carros/${car.id}`} key={car.id}>
+              <Link
+                to={`/carros/${car.id}`}
+                target="_self"
+                key={car.id}
+                state={{ data: car }}
+                rel="noopener noreferrer"
+              >
                 <div className="w-ful h-56 bg-white rounded-none flex shadow-md">
                   <div className="w-[250px] h-full">
                     <img
@@ -62,14 +69,13 @@ export function Cars() {
                   </div>
 
                   <div className="p-4 flex flex-col">
-                    <h1 className="text-3xl font-bold text-primary mb-4">
-                      {car.modelCar} {car.brandCar}
-                    </h1>
-
-                    <p className="text-lg">Ano {car.yearFabrication}</p>
-                    <p>KM: {car.km}</p>
-                    <p>Tipo de combustível: {car.fuel}</p>
-                    <p className="font-bold">Valor: {car.price}</p>
+                    <Card>
+                      <CardHeader>
+                        <CardTitle>
+                          {car.brandCar} {car.modelCar}
+                        </CardTitle>
+                      </CardHeader>
+                    </Card>
                   </div>
                 </div>
               </Link>

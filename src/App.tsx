@@ -11,8 +11,10 @@ import { Forms } from "./pages/Forms";
 import { Motorbikes } from "./pages/Motorbikes";
 import { Dashboard } from "./admin/pages/Dashboard";
 import PrivateRoute from "./routes/PrivateRoute";
-import { Emails } from "./admin/pages/Emails";
-import { CreateCar } from "./admin/pages/CreateCar";
+import { Email } from "./admin/pages/Email";
+import { CreateCars } from "./admin/pages/CreateCars";
+import { CreateBike } from "./admin/pages/CreateBike";
+import { CarDetails } from "./pages/CarDetails";
 
 function App() {
   return (
@@ -73,6 +75,15 @@ function App() {
         />
 
         <Route
+          path="/carros/:id"
+          element={
+            <PublicRoute>
+              <CarDetails />
+            </PublicRoute>
+          }
+        />
+
+        <Route
           path="/motos"
           element={
             <PublicRoute>
@@ -98,9 +109,36 @@ function App() {
               <Dashboard />
             </PrivateRoute>
           }
-        />
+        >
+          <Route
+            path="/dashboard/emails"
+            element={
+              <PrivateRoute>
+                <Email />
+              </PrivateRoute>
+            }
+          />
 
-        <Route
+          <Route
+            path="/dashboard/carros"
+            element={
+              <PrivateRoute>
+                <CreateCars />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/dashboard/motos"
+            element={
+              <PrivateRoute>
+                <CreateBike />
+              </PrivateRoute>
+            }
+          />
+        </Route>
+
+        {/* <Route
           path="/dashboard/emails"
           element={
             <PrivateRoute>
@@ -116,7 +154,7 @@ function App() {
               <CreateCar />
             </PrivateRoute>
           }
-        />
+        /> */}
       </Routes>
     </AuthProvider>
   );
