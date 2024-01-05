@@ -1,4 +1,5 @@
 import { FacebookIcon, InstagramIcon, TwitterIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
@@ -69,14 +70,6 @@ export function Footer() {
               <li>
                 <a
                   className="text-white   text-[16px] font-light leading-5 hover:text-green-800"
-                  href="/"
-                >
-                  Contrato
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-white   text-[16px] font-light leading-5 hover:text-green-800"
                   href="/financiamento"
                 >
                   Financiamento
@@ -115,12 +108,13 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a
+                <Link
                   className="text-white   text-[16px] font-light leading-5 hover:text-green-800"
-                  href="/"
+                  to="/contato"
+                  target="_top"
                 >
                   Sugestão de Melhorias
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

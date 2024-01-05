@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { onSnapshot, collection } from "firebase/firestore";
 import { db } from "../firebase";
 import { Header } from "../components/Header";
@@ -6,6 +6,7 @@ import { Footer } from "@/sections/Footer";
 import { IMotorbike } from "@/types";
 import { Card } from "@/components/ui/card";
 import { Filters } from "@/components/Filters";
+import { Link } from "react-router-dom";
 
 export function Motorbikes() {
   const [data, setData] = useState<IMotorbike[]>([]);
@@ -46,14 +47,41 @@ export function Motorbikes() {
             <h1 className="text-3xl font-bold text-white mb-4">Filtros</h1>
             <Filters db={db} collectionCar="motorbikes" />
           </Card>
-          <div className="w-full p-4 flex-1 bg-red-500">
-            {data.map((data) => (
-              <div key={data.id}>
-                <h1>
-                  {data.motorbikeBrand} {data.motorbikeModel}
-                </h1>
-              </div>
-            ))}
+          <div className="w-full p-4 flex-1">
+            <div className="w-full p-4 flex-1 flex flex-col space-y-7">
+              {data.map((motorbike) => (
+                <Link
+                  to={`/motos/${motorbike.id}`}
+                  target="_self"
+                  key={motorbike.id}
+                  state={{ data: motorbike }}
+                  rel="noopener noreferrer"
+                >
+                  <div className="w-ful h-56 bg-white rounded-none flex shadow-md">
+                    <div className="w-[250px] h-full">
+                      <img
+                        src={motorbike.images[0]}
+                        width={200}
+                        height={200}
+                        alt={motorbike.motorbikeBrand}
+                        className="object-cover w-full h-56"
+                      />
+                    </div>
+
+                    <div className="p-4 flex flex-col">
+                      <h1 className="text-3xl font-bold text-primary mb-4">
+                        {motorbike.motorbikeModel} {motorbike.motorbikeBrand}
+                      </h1>
+
+                      <p className="text-lg">Ano {motorbike.yearFabrication}</p>
+                      <p>KM: {motorbike.km}</p>
+                      <p>Tipo de combustível: {motorbike.fuel}</p>
+                      <p className="font-bold">Valor: {motorbike.price}</p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </main>

@@ -20,7 +20,7 @@ export function ToggleMenu({ className }: ToggleMenuProps) {
       <DropdownMenuTrigger className={className}>
         <Menu />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 h-52">
+      <DropdownMenuContent className="w-56 h-56">
         {NAV_LINK.map((link) => (
           <DropdownMenuItem key={link.href}>
             <Link to={link.href}>{link.label}</Link>

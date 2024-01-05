@@ -10,7 +10,7 @@ export function Feature() {
             A melhor plataforma de negociação de veículos
           </h2>
 
-          <p className="mt-4 text-center mx-auto md:w-[648px] text-[#848484] text-base md:text-[16px] font-normal">
+          <p className="mt-2 text-center mx-auto md:w-[648px] text-[#848484] text-base md:text-[16px] font-normal">
             A AutoNegocie revolucionou a maneira como as pessoas compram e
             vendem veículos. Como uma plataforma{" "}
             <span className="text-primary">inovadora</span>, ela se destaca por
@@ -20,7 +20,7 @@ export function Feature() {
           </p>
         </div>
 
-        <div className="mt-8 grid md:h-[650.5px] h-auto grid-cols-1 md:grid-cols-2 gap-8 place-items-center border-b max-w-[937px] mx-auto">
+        <div className="mt-8 grid md:h-[650.5px] h-auto grid-cols-1 md:grid-cols-2 gap-8 place-items-center border-b  max-w-[937px] mx-auto">
           {FEATURES.map((feature) => (
             <Box
               key={feature.title}

@@ -10,9 +10,8 @@ export const NAV_LINK = [
 
   { label: "Motos", href: "/motos" },
 
-  { lebel: "Lojas", href: "/lojas" },
-
   { label: "Oficina de Dicas", href: "/oficina de Dicas" },
+  { label: "Lojas", href: "/lojas" },
 
   { label: "Contato", href: "/contato" },
 ];

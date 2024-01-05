@@ -15,6 +15,7 @@ import { Email } from "./admin/pages/Email";
 import { CreateCars } from "./admin/pages/CreateCars";
 import { CreateBike } from "./admin/pages/CreateBike";
 import { CarDetails } from "./pages/CarDetails";
+import { MotorbikeDetails } from "./pages/motorbikeDetails";
 
 function App() {
   return (
@@ -88,6 +89,15 @@ function App() {
           element={
             <PublicRoute>
               <Motorbikes />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="/motos/:id"
+          element={
+            <PublicRoute>
+              <MotorbikeDetails />
             </PublicRoute>
           }
         />

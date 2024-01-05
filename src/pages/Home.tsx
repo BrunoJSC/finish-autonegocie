@@ -41,7 +41,7 @@ export function Home() {
           </div>
         </div>
       </Banner>
-      <main className="max-w-7xl mx-auto min-h-screen mb-48">
+      <main className="max-w-7xl  w-full mx-auto min-h-screen mb-48">
         <Feature />
 
         <FAQ />

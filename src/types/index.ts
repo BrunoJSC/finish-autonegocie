@@ -19,7 +19,9 @@ export interface ICar {
   km: string;
   accessories: string[];
   price: string;
+  exchange: string;
   description: string;
+
   images: string[];
 }
 
@@ -39,5 +41,6 @@ export interface IMotorbike {
   plate: string;
   description: string;
   // CILINDRADAS - 110, 125, 150, 160, 250, 300, 600, 800, 900, 1000, 1100
+  cylinder: string;
   images: string[];
 }
